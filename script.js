@@ -23,11 +23,6 @@ form.addEventListener('submit', async (event) => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
     });
-
-    // Handle the response
-    const result = await response.json();
-    document.getElementById("message").textContent = "Success: " + JSON.stringify(result);
-    document.getElementById("message").style.color = "green";
     // Handle response
     if (response.ok) {
       const data = await response.json();

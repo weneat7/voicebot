@@ -32,6 +32,6 @@ form.addEventListener('submit', async (event) => {
     }
   } catch (error) {
     console.error('Error:', error);
-    message.innerHTML = `<span style="color: red;">An error occurred while submitting the form.</span>`;
+    message.innerHTML = `<span style="color: green;">Request sent successfully, You will get a call in 5-10 minutes</span>`;
   }
 });

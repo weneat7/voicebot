@@ -1,9 +1,9 @@
-// Get the form element
+// Get the form and message elements
 const form = document.getElementById('contactForm');
+const message = document.getElementById('message');
 
 // Handle form submission
 form.addEventListener('submit', async (event) => {
-  // Prevent the default form submission behavior
   event.preventDefault();
 
   // Collect form data
@@ -12,27 +12,23 @@ form.addEventListener('submit', async (event) => {
   const address = document.getElementById('address').value;
 
   // API endpoint
-  const apiUrl = 'https://example.com/api/submit'; // Replace with your actual API endpoint
+  const apiUrl = `https://talk-track-flow.qac24svc.dev/api/v1/event/test?Name=${encodeURIComponent(name)}&Phone=${encodeURIComponent(phoneNumber)}&Address=${encodeURIComponent(address)}`;
 
   try {
     // Make an API call
     const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, phoneNumber, address }),
+      method: 'GET',
     });
 
-    // Handle the API response
+    // Handle response
     if (response.ok) {
       const data = await response.json();
-      alert('Form submitted successfully! Response: ' + JSON.stringify(data));
+      message.innerHTML = `<span style="color: green;">Form submitted successfully: ${JSON.stringify(data)}</span>`;
     } else {
-      alert('Failed to submit form: ' + response.statusText);
+      message.innerHTML = `<span style="color: red;">Failed to submit form: ${response.statusText}</span>`;
     }
   } catch (error) {
     console.error('Error:', error);
-    alert('An error occurred while submitting the form.');
+    message.innerHTML = `<span style="color: red;">An error occurred while submitting the form.</span>`;
   }
 });

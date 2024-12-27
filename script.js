@@ -15,11 +15,18 @@ form.addEventListener('submit', async (event) => {
   const apiUrl = `https://talk-track-flow.qac24svc.dev/api/v1/event/test?Name=${encodeURIComponent(name)}&Phone=${encodeURIComponent(phoneNumber)}&Address=${encodeURIComponent(address)}`;
 
   try {
-    // Make an API call
-    const response = await fetch(apiUrl, {
-      method: 'GET',
+    // Make the POST request
+    const response = await fetch(`${apiUrl}?Name=${encodeURIComponent(name)}&Phone=${encodeURIComponent(phoneNumber)}&Address=${encodeURIComponent(address)}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
     });
 
+    // Handle the response
+    const result = await response.json();
+    document.getElementById("message").textContent = "Success: " + JSON.stringify(result);
+    document.getElementById("message").style.color = "green";
     // Handle response
     if (response.ok) {
       const data = await response.json();

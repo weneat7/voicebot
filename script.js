@@ -17,7 +17,7 @@ form.addEventListener('submit', async (event) => {
   try {
     // Make the POST request
     const response = await fetch(`${apiUrl}?Name=${encodeURIComponent(name)}&Phone=${encodeURIComponent(phoneNumber)}&Address=${encodeURIComponent(address)}`, {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },

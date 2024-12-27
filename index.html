@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
+  <title>Stylish Contact Form</title>
   <style>
+    /* General Styling */
     body {
       font-family: 'Arial', sans-serif;
-      background: #f4f4f9;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #333;
       margin: 0;
       padding: 0;
       display: flex;
@@ -15,55 +17,79 @@
       align-items: center;
       height: 100vh;
     }
+
+    /* Form Container */
     .container {
-      background: #ffffff;
+      background: #fff;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       width: 100%;
       max-width: 400px;
     }
+
+    /* Header */
     h2 {
       text-align: center;
-      color: #333;
       margin-bottom: 20px;
+      color: #6a11cb;
+      font-size: 1.5rem;
     }
+
+    /* Input Labels */
     label {
+      font-size: 14px;
       font-weight: bold;
       color: #555;
       display: block;
       margin-bottom: 5px;
     }
+
+    /* Input Fields */
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
       border-radius: 5px;
       font-size: 14px;
+      background: #f9f9f9;
+      transition: border-color 0.3s ease;
     }
+
+    input:focus, textarea:focus {
+      border-color: #6a11cb;
+      outline: none;
+    }
+
     textarea {
-      resize: none;
+      resize: vertical;
     }
+
+    /* Submit Button */
     button {
       width: 100%;
-      padding: 10px;
-      background: #007bff;
+      padding: 12px 15px;
+      background: #6a11cb;
       color: #fff;
       border: none;
       border-radius: 5px;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     button:hover {
-      background: #0056b3;
+      background: #2575fc;
     }
+
+    /* Success/Error Message */
     .message {
       text-align: center;
-      margin-top: 20px;
       font-size: 14px;
       color: #555;
+      margin-top: 20px;
     }
   </style>
 </head>

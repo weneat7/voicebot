@@ -12,7 +12,7 @@ form.addEventListener('submit', async (event) => {
   const address = document.getElementById('address').value;
 
   // API endpoint
-  const apiUrl = `https://talk-track-flow.qac24svc.dev/api/v1/event/test?Name=${encodeURIComponent(name)}&Phone=${encodeURIComponent(phoneNumber)}&Address=${encodeURIComponent(address)}`;
+  const apiUrl = `https://talk-track-flow.qac24svc.dev/api/v1/event/test`;
 
   try {
     // Make the POST request
